@@ -1,0 +1,5 @@
+# Ignore p8 and NodeJS
+
+p8/
+NodeJS/
+**/node_modules/

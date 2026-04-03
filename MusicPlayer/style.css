@@ -1,0 +1,270 @@
+/* Global Styles */
+:root {
+    --primary-color: #3b3637;
+    --secondary-color: #8e8585;
+    --bg-color: #ffffff;
+    --text-color: #ffffff;
+    --card-bg: #e4d2d2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+}
+
+/* Header */
+header {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(18,18,18,0) 100%);
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+header p {
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+/* Article / Player Container */
+.player-container {
+    background-color: var(--card-bg);
+    border-radius: 20px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    margin-bottom: auto; /* Pushes footer down */
+}
+
+/* Canvas Area */
+.visualizer-area {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.controls-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    pointer-events: none; /* Let clicks pass through if needed */
+}
+
+.song-info h2 {
+    font-size: 1.5rem;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+}
+
+.song-info p {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Controls Section */
+.controls {
+    padding: 30px;
+    text-align: center;
+}
+
+audio {
+    width: 100%;
+    margin-bottom: 20px;
+    outline: none;
+}
+
+/* Custom Audio Styling (Webkit only roughly supported for standard tag, wrapper usually needed for full custom) */
+audio::-webkit-media-controls-panel {
+    background-color: #f0f0f0;
+}
+
+/* Playlist */
+.playlist {
+    margin-top: 20px;
+    text-align: left;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+}
+
+.playlist h3 {
+    margin-bottom: 10px;
+    color: #888;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.playlist ul {
+    list-style: none;
+}
+
+.playlist li {
+    padding: 10px;
+    margin: 5px 0;
+    background: #2a2a2a;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.playlist li:hover {
+    background: #dfdcdc;
+    color: var(--primary-color);
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    background-color: var(--secondary-color);
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 40px;
+}
+
+/* Utility Classes */
+.hidden {
+    display: none !important;
+}
+
+/* Registration Form Styles */
+.container {
+    width: 90%;
+    max-width: 500px;
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    margin-bottom: auto;
+}
+
+.form-box h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #000000;
+    font-size: 0.9rem;
+}
+
+.input-group input[type="text"],
+.input-group input[type="date"],
+.input-group select,
+.input-group input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #ffffff;
+    border: 1px solid #444;
+    border-radius: 8px;
+    color: #7b7474;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.input-group input[type="text"]:focus,
+.input-group input[type="date"]:focus,
+.input-group select:focus {
+    border-color: var(--primary-color);
+}
+
+.radio-group {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.radio-group input[type="radio"] {
+    accent-color: var(--primary-color);
+}
+
+.input-group small {
+    display: block;
+    margin-top: 5px;
+    color: #777;
+    font-size: 0.8rem;
+}
+
+.btn-submit, .btn-secondary {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+    text-transform: uppercase;
+}
+
+.btn-submit {
+    background: linear-gradient(45deg, var(--primary-color), #ff5e00);
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(255, 0, 85, 0.4);
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 0, 85, 0.6);
+}
+
+.btn-secondary {
+    background-color: #333;
+    color: #ccc;
+    margin-top: 20px;
+}
+
+.btn-secondary:hover {
+    background-color: #444;
+    color: #fff;
+}
+
+.welcome-banner {
+    padding: 20px;
+    text-align: center;
+    background-color: #252525;
+}
+
+.welcome-banner h2 {
+    color: #fff;
+    font-size: 1.2rem;
+}
